@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Details UI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .bg-teal {
+            background-color: #157347 !important;
+            color: white;
+        }
+
+        .btn-teal {
+            background-color: #157347;
+            color: white;
+            border: none;
+        }
+
+        .btn-teal:hover {
+            background-color: #105735;
+            color: white;
+        }
+
+        .alert-teal {
+            background-color: #d1e7dd;
+            color: #0f5132;
+            border-color: #badbcc;
+        }
+
+        .table-teal-header {
+            background-color: #cae0e8;
+            color: #1c4e60;
+        }
+    </style>
+</head>
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src=".//staitic/navbar44.jfif" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+
+        </a>
+        register details
+    </div>
+</nav>
+
+<body class="bg-light">
+
+    <div class="container-fluid px-4 py-5">
+        <div class="row g-4">
+
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm p-4">
+                    <h3 class="text-center mb-4 text-secondary fw-semibold">Register Your Details</h3>
+
+                    <form id="registrationForm" novalidate>
+                        <div class="mb-3">
+                            <label for="name" class="form-label text-muted">Your Name</label>
+                            <input type="text" class="form-control form-control-lg" id="name" required>
+                            <div class="invalid-feedback">Name is required.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label text-muted">Your Email</label>
+                            <input type="email" class="form-control form-control-lg" id="email" required>
+                            <div class="invalid-feedback">Please enter a valid email.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="adhar" class="form-label text-muted">Your Adhar Card Number</label>
+                            <input type="text" class="form-control form-control-lg" id="adhar" required>
+                            <div class="invalid-feedback">Enter a valid 12-digit Adhar number.</div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="male" value="Male"
+                                    checked>
+                                <label class="form-check-label text-muted" for="male">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                                <label class="form-check-label text-muted" for="female">Female</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-teal btn-lg w-100 py-2 fs-5 fw-medium">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div id="successMessage" class="alert alert-teal mb-4 d-none" role="alert">
+                    <span class="fw-semibold">Registration is Success</span>
+                </div>
+                <label for="exampleDataList" class="form-label">ditails serch</label>
+                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                <datalist id="datalistOptions">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="Seattle">
+                    <option value="Los Angeles">
+                    <option value="Chicago">
+                </datalist>
+                <br>
+                <div class="card border-0 shadow-sm p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="text-secondary fw-semibold m-0">View Details</h5>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered align-middle m-0">
+                            <thead class="table-teal-header">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Adhar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dataTableBody">
+                                <tr>
+                                    <td class="text-muted text-center" colspan="3">No data available</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
